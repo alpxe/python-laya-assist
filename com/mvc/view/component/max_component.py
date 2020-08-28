@@ -79,6 +79,7 @@ class MaxComponent(QMainWindow, Ui_Form):
     def initEvent(self):
         self.listView.clicked.connect(self.__itemClickHandler)
         self.checkAll.clicked.connect(self.__checkClickHandler)
+        self.antBtn.clicked.connect(self.__antClickHandler)
         self.copyBtn.clicked.connect(self.__clipboard)
 
     def __checkClickHandler(self):
@@ -88,6 +89,19 @@ class MaxComponent(QMainWindow, Ui_Form):
         for i in range(self.model.rowCount()):
             item: QStandardItem = self.model.item(i, 0)
             item.setCheckState(self.checkAll.checkState())
+
+    def __antClickHandler(self):
+        """
+        反选
+        :return:
+        """
+        for i in range(self.model.rowCount()):
+            item: QStandardItem = self.model.item(i, 0)
+            if item.checkState() == Qt.Checked:  # 选中
+                item.setCheckState(Qt.Unchecked)
+            elif item.checkState() == Qt.Unchecked:
+                item.setCheckState(Qt.Checked)
+        self.__itemClickHandler()  # 修正待选框状态
 
     def __itemClickHandler(self):
         checked_num = 0
