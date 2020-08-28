@@ -100,7 +100,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "LayaBox - 多态图工具"))
+        Form.setWindowTitle(_translate("Form", "Laya - 多态图工具"))
         self.generateBtn.setText(_translate("Form", "生成"))
         self.label_5.setText(_translate("Form", "目前仅支持PNG格式 按图片命名降序排列"))
         self.deleteCheck.setText(_translate("Form", "生成后清空输入文件夹"))

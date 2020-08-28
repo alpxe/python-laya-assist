@@ -17,7 +17,7 @@
    <enum>Qt::DefaultContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>LayaBox - 多态图工具</string>
+   <string>Laya - 多态图工具</string>
   </property>
   <widget class="QPushButton" name="generateBtn">
    <property name="geometry">

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Laya - 路径拷贝</string>
   </property>
   <widget class="QCheckBox" name="checkAll">
    <property name="geometry">

@@ -52,7 +52,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Laya - 路径拷贝"))
         self.checkAll.setText(_translate("Form", " 待定的文件"))
         self.copyBtn.setText(_translate("Form", "拷贝到剪切板"))
         self.totalTxt.setText(_translate("Form", "项目名称"))

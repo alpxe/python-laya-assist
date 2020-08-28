@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(400, 300)
+        Form.resize(400, 187)
         self.polyBtn = QtWidgets.QPushButton(Form)
-        self.polyBtn.setGeometry(QtCore.QRect(20, 200, 113, 32))
+        self.polyBtn.setGeometry(QtCore.QRect(20, 100, 113, 32))
         self.polyBtn.setObjectName("polyBtn")
         self.lineEdit = QtWidgets.QLineEdit(Form)
-        self.lineEdit.setGeometry(QtCore.QRect(30, 260, 341, 20))
+        self.lineEdit.setGeometry(QtCore.QRect(30, 150, 341, 20))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -39,7 +39,7 @@ class Ui_Form(object):
         self.lineEdit.setReadOnly(True)
         self.lineEdit.setObjectName("lineEdit")
         self.maxBtn = QtWidgets.QPushButton(Form)
-        self.maxBtn.setGeometry(QtCore.QRect(20, 160, 113, 32))
+        self.maxBtn.setGeometry(QtCore.QRect(20, 60, 113, 32))
         self.maxBtn.setObjectName("maxBtn")
         self.layoutWidget = QtWidgets.QWidget(Form)
         self.layoutWidget.setGeometry(QtCore.QRect(21, 10, 361, 33))
@@ -62,9 +62,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.polyBtn.setText(_translate("Form", "多态图"))
-        self.lineEdit.setText(_translate("Form", "https://github.com/alpxe/laya-polymorhic-graph"))
+        Form.setWindowTitle(_translate("Form", "Laya 辅助工具箱"))
+        self.polyBtn.setText(_translate("Form", "多态图工具"))
+        self.lineEdit.setText(_translate("Form", "https://github.com/alpxe/python-laya-assist.git"))
         self.maxBtn.setText(_translate("Form", "LayaMaxUI"))
         self.label.setText(_translate("Form", "Laya项目:"))
         self.pathBtn.setText(_translate("Form", "..."))

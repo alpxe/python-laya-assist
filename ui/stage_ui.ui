@@ -7,30 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>187</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Laya 辅助工具箱</string>
   </property>
   <widget class="QPushButton" name="polyBtn">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>200</y>
+     <y>100</y>
      <width>113</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>多态图</string>
+    <string>多态图工具</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>260</y>
+     <y>150</y>
      <width>341</width>
      <height>20</height>
     </rect>
@@ -82,7 +82,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>https://github.com/alpxe/laya-polymorhic-graph</string>
+    <string>https://github.com/alpxe/python-laya-assist.git</string>
    </property>
    <property name="frame">
     <bool>false</bool>
@@ -98,7 +98,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>160</y>
+     <y>60</y>
      <width>113</width>
      <height>32</height>
     </rect>
