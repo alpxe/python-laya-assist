@@ -1,0 +1,2 @@
+class ModelLocator:
+    project = ""

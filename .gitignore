@@ -1,0 +1,17 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+release/
+__pycache__/
+# Other files and folders
+.laya
+.idea
+main.spec
+
+assets/
+build/
+dist/
+protofile/
+
+# Executables
+.DS_Store
