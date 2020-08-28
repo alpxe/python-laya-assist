@@ -6,7 +6,7 @@ __pycache__/
 # Other files and folders
 .laya
 .idea
-main.spec
+.spec
 
 assets/
 build/

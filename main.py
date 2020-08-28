@@ -1,8 +1,12 @@
+import os
 import sys
 import com.core.apps as apps
 from PyQt5.QtWidgets import QApplication
 
 from com.mvc.controller.notice import Notice
+
+if hasattr(sys, 'frozen'):
+    os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
 
 
 class Main:
