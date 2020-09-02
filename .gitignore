@@ -4,9 +4,9 @@ bin-release/
 release/
 __pycache__/
 # Other files and folders
-.laya
-.idea
-.spec
+*.laya
+*.idea
+*.spec
 
 assets/
 build/
