@@ -36,6 +36,7 @@ class MaxComponent(QMainWindow, Ui_Form):
         skins_url = os.path.join(project, "src/ui/layaMaxUI.ts")  # 场景路径
         res_url = os.path.join(project, "bin/fileconfig.json")  # 资源路径
         unp_url = os.path.join(project, "bin/unpack.json")  # unpack
+        sound_url = os.path.join(project, "bin/sound")  # 音乐文件夹
 
         totals = []
         if os.path.exists(skins_url):
@@ -64,6 +65,11 @@ class MaxComponent(QMainWindow, Ui_Form):
             totals.extend(arr)
         else:
             self.unpackTxt.setText("[unpack] 不存在")
+
+        # 音乐文件夹
+        if os.path.exists(sound_url):
+            arr = self.ext_sound(sound_url, "sound")
+            totals.extend(arr)
 
         self.model = QStandardItemModel()
         for i in totals:
@@ -146,6 +152,25 @@ class MaxComponent(QMainWindow, Ui_Form):
     @staticmethod
     def ext_unpack(data):
         return ['''{{url: "{0}", type: Laya.Loader.IMAGE}},'''.format(item) for item in data]
+
+    @staticmethod
+    def ext_sound(path, sound="sound"):
+        links = []
+
+        def filename(fp):
+            for child in os.listdir(fp):
+                child_path = os.path.join(fp, child)
+                if os.path.isdir(child_path):
+                    filename(child_path)
+                else:
+                    if child_path.endswith('.mp3') is True:
+                        pc = re.sub(path, '', child_path)
+                        res = sound + pc
+                        links.append(res)
+
+        filename(path)
+
+        return ['''{{url: "{0}", type: Laya.Loader.SOUND}},'''.format(p) for p in links]
 
     def closeEvent(self, event) -> None:
         apps.facade().sendNotification(Notice.APP_STAGE_SHOW)
