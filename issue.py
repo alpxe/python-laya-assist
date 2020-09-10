@@ -2,6 +2,7 @@ import json
 import os
 import re
 import shutil
+import time
 import zipfile
 
 
@@ -14,7 +15,8 @@ class Main:
             print("请先发布Laya Release")
             return
 
-        res_path = os.path.join(self.basePath, "112358")
+        release = str(int(time.time()))  # 发布文件夹 时间戳
+        res_path = os.path.join(self.basePath, release)
         if not os.path.exists(res_path):
             os.makedirs(res_path)
 
@@ -34,37 +36,29 @@ class Main:
         libs = []
         js_file = os.path.join(web_path, "index.js")
         with open(js_file, "r", encoding="utf-8") as fs:
-            js_list = fs.readlines()
+            js_list = fs.read().split(",")
 
-        temp = os.path.join(res_path, "temp")
-        if not os.path.exists(temp):
-            os.makedirs(temp)  # 创建临时文件夹 存放js
-
+        zp = zipfile.ZipFile(os.path.join(res_path, "js/code.cfg"), "w", compression=zipfile.ZIP_DEFLATED)
         for line in js_list:
             if "loadLib" in line:
-                # 相关js 移动到临时文件夹
-                jsf = re.findall(r"([^\"]+?)\"\)[,|;]$", line)[0]
-                shutil.copy(os.path.join(web_path, jsf), temp)
-
-                # 提供json字符串
-                line = re.findall(r"([^\/]+?)\"\)[,|;]$", line)[0]
+                jsf = re.findall(r"([^\"]+?)\"\)", line)[0]  # 相对路径
+                line = re.findall(r"([^\/]+?)\"\)", line)[0]  # 名称
                 libs.append("js/" + line)
+
+                zp.write(os.path.join(web_path, jsf), line)
+        zp.close()
 
         manifest_file = os.path.join(res_path, "manifest.json")
         with open(manifest_file, "w", encoding="utf-8") as fs:
             fs.write(json.dumps({"libs": libs, "game": []}))
 
-        # ~~~~ temp.js >> code.cfg
-        zp = zipfile.ZipFile(os.path.join(res_path, "js/code.cfg"), "w", compression=zipfile.ZIP_DEFLATED)
-        for child in os.listdir(temp):
-            zp.write(os.path.join(temp, child), child)
-        zp.close()
-        shutil.rmtree(temp)
-
     @staticmethod
     def cp_dirs(src, res, ds):
         src_ds = os.path.join(src, ds)
         res_ds = os.path.join(res, ds)
+
+        if not os.path.exists(src_ds):
+            return
 
         # 如果目标路径存在原文件夹的话就先删除
         if os.path.exists(res_ds):
