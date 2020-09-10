@@ -5,8 +5,13 @@ import shutil
 import time
 import zipfile
 
+"""
+Laya 压缩发布功能
+"""
+
 
 class Main:
+    # 项目 release 目录
     basePath = "/Users/alpxe/code/h5/laya/laya-hexagon/release"
 
     def __init__(self):
