@@ -8,7 +8,10 @@ __pycache__/
 *.idea
 *.spec
 
-assets/
+
+assets/*
+!assets/deploy
+
 build/
 dist/
 protofile/
