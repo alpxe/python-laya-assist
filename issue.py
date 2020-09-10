@@ -16,18 +16,21 @@ class Main:
             return
 
         release = str(int(time.time()))  # 发布文件夹 时间戳
-        res_path = os.path.join(self.basePath, release)
+        # res_path = os.path.join(self.basePath, release)
+        res_path = os.path.join(self.basePath, "rel")
         if not os.path.exists(res_path):
             os.makedirs(res_path)
 
-        # 拷贝
-        self.cp_dirs(web_path, res_path, "res")
-        self.cp_dirs(web_path, res_path, "skins")
-        self.cp_dirs(web_path, res_path, "sound")
+        # 拷贝文件夹
+        fixes = ["js", "libs"]  # 这两个文件不拷贝
+        for fn in os.listdir(web_path):
+            if os.path.isdir(os.path.join(web_path, fn)) and fn not in fixes:
+                self.cp_dirs(web_path, res_path, fn)
 
         self.cp_file(web_path, res_path, "fileconfig.json")
         self.cp_file(web_path, res_path, "version.json")
 
+        # 模版
         self.cp_dirs("assets/deploy", res_path, "css")
         self.cp_dirs("assets/deploy", res_path, "js")
         self.cp_file("assets/deploy", res_path, "index.html")
