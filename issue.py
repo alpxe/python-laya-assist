@@ -12,7 +12,8 @@ Laya 压缩发布功能
 
 class Main:
     # 项目 release 目录
-    basePath = "/Users/alpxe/code/h5/laya/laya-hexagon/release"
+    # basePath = "/Users/alpxe/code/h5/laya/laya-hexagon/release"
+    basePath = "/Users/alpxe/code/h5/laya/laya-game-box/release"
 
     def __init__(self):
         web_path = os.path.join(self.basePath, "web")
@@ -21,8 +22,8 @@ class Main:
             return
 
         release = str(int(time.time()))  # 发布文件夹 时间戳
-        # res_path = os.path.join(self.basePath, release)
-        res_path = os.path.join(self.basePath, "rel")
+        res_path = os.path.join(self.basePath, release)
+        # res_path = os.path.join(self.basePath, "rel")
         if not os.path.exists(res_path):
             os.makedirs(res_path)
 
@@ -59,6 +60,16 @@ class Main:
         manifest_file = os.path.join(res_path, "manifest.json")
         with open(manifest_file, "w", encoding="utf-8") as fs:
             fs.write(json.dumps({"libs": libs, "game": []}))
+
+        # 修改标题
+        with open(os.path.join(web_path, "index.html"), "r", encoding="utf-8") as fs:
+            html = fs.read()
+            title = re.findall(r"<title.*?>(.+?)</title>", html)[0]
+        with open(os.path.join(res_path, "index.html"), "r", encoding="utf-8") as fs:
+            html = fs.read()
+            html = re.sub(r"<title.*?>(.+?)</title>", "<title>" + title + "</title>", html)
+        with open(os.path.join(res_path, "index.html"), "w", encoding="utf-8") as fs:
+            fs.write(html)
 
     @staticmethod
     def cp_dirs(src, res, ds):
