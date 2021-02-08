@@ -42,9 +42,9 @@ class Stage(QMainWindow, Ui_Form):
         self.maxMc.show()
 
     def __library_click_handler(self):
-        # if not self.__has_project():
-        #     self.__dialog()
-        #     return
+        if not self.__has_project():
+            self.__dialog()
+            return
 
         self.hide()
         self.guLib.show()

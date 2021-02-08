@@ -88,8 +88,8 @@ class MaxComponent(QMainWindow, Ui_Form):
         self.antBtn.clicked.connect(self.__antClickHandler)
         self.copyBtn.clicked.connect(self.__clipboard)
 
-    def __checkClickHandler(self):
-        if self.checkAll.checkState() == Qt.PartiallyChecked:
+    def __checkClickHandler(self, e):
+        if e:
             self.checkAll.setCheckState(Qt.Checked)
 
         for i in range(self.model.rowCount()):

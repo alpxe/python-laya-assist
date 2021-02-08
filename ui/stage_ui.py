@@ -71,4 +71,4 @@ class Ui_Form(object):
         self.maxBtn.setText(_translate("Form", "LayaMaxUI"))
         self.label.setText(_translate("Form", "Laya项目:"))
         self.pathBtn.setText(_translate("Form", "..."))
-        self.libraryBtn.setText(_translate("Form", "库导入"))
+        self.libraryBtn.setText(_translate("Form", "库相关"))
