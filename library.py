@@ -5,17 +5,18 @@ import shutil
 
 class Main:
     # basePath = "/Users/alpxe/code/h5/laya/laya-links"
-    basePath = "/Users/alpxe/Desktop/test"
+    basePath = "/Users/alpxe/code/h5/laya/laya-five"
+    # basePath = "/Users/alpxe/Desktop/test"
 
     def __init__(self):
         print("Laya引擎 切换类库后。 将必要的库导入")
 
         file_list = [
-            # 'bundles',
+            'bundles',
             # 'library',
-            'gsap',
+            # 'gsap',
             # 'JsBridge',
-            'puremvc'
+            # 'puremvc'
         ]
 
         for p in file_list:
