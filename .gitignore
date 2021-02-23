@@ -16,5 +16,7 @@ build/
 dist/
 protofile/
 
+venv/
+
 # Executables
 .DS_Store
