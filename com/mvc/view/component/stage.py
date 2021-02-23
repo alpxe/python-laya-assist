@@ -1,3 +1,4 @@
+import os
 import re
 
 from PyQt5.QtCore import Qt
@@ -8,12 +9,17 @@ from com.mvc.view.component.gulib import GuLib
 from com.mvc.view.component.max_component import MaxComponent
 from com.mvc.view.component.poly import Poly
 from ui.stage_ui import Ui_Form
+import json
 
 
 class Stage(QMainWindow, Ui_Form):
+    cache_path = "assets/.cache"
+
     def __init__(self):
         super(Stage, self).__init__()
         self.setupUi(self)
+
+        self.pathTxt.setText(self.exist_url())
 
         self.poly = Poly()
         self.maxMc = MaxComponent()
@@ -30,7 +36,8 @@ class Stage(QMainWindow, Ui_Form):
         pass
 
     def __path_click_handler(self):
-        directory = QFileDialog.getExistingDirectory(self, "请选择文件夹路径", "./")
+        path = os.path.dirname(self.exist_url())
+        directory = QFileDialog.getExistingDirectory(self, "请选择文件夹路径", path)
         self.pathTxt.setText(directory)
 
     def __max_click_handler(self):
@@ -59,10 +66,32 @@ class Stage(QMainWindow, Ui_Form):
     def back(self):
         self.show()
 
-    @staticmethod
-    def __has_project() -> bool:
+    def exist_url(self):
+        """
+        读取缓存的 cache exist
+        :return:
+        """
+        base_url = ''
+        with open(self.cache_path, 'r', encoding='utf-8') as fs:
+            try:
+                base_url = json.loads(fs.read())["exist"]
+                ModelLocator.project = base_url  # 当前项目指向
+            except Exception as e:
+                print('error {}'.format(e))
+        return base_url
+
+    def save_url(self):
+        with open(self.cache_path, 'w', encoding='utf-8') as fs:
+            fs.write(json.dumps({"exist": ModelLocator.project}))
+
+    def __has_project(self) -> bool:
         total = re.findall(r"[^\/]+$", ModelLocator.project)  # 项目名称
-        return len(total) > 0
+
+        if len(total) > 0:
+            self.save_url()  # 打开项目时 保存路径
+            return True
+        else:
+            return False
 
     @staticmethod
     def __dialog():

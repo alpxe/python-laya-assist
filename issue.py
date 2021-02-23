@@ -12,8 +12,8 @@ Laya 压缩发布功能
 
 class Main:
     # 项目 release 目录
-    basePath = "/Users/alpxe/code/h5/laya/laya-game-box/release"
-    # basePath = "/Users/alpxe/code/h5/laya/laya-links/release"
+    # basePath = "/Users/alpxe/code/h5/laya/laya-game-box/release"
+    basePath = "/Users/alpxe/code/h5/laya/laya-tussle/release"
 
     def __init__(self):
         web_path = os.path.join(self.basePath, "web")
