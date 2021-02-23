@@ -72,12 +72,13 @@ class Stage(QMainWindow, Ui_Form):
         :return:
         """
         base_url = ''
-        with open(self.cache_path, 'r', encoding='utf-8') as fs:
-            try:
+        try:
+            with open(self.cache_path, 'r', encoding='utf-8') as fs:
                 base_url = json.loads(fs.read())["exist"]
                 ModelLocator.project = base_url  # 当前项目指向
-            except Exception as e:
-                print('error {}'.format(e))
+        except Exception as e:
+            print('error {}'.format(e))
+            
         return base_url
 
     def save_url(self):
