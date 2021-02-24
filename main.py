@@ -9,6 +9,7 @@ if hasattr(sys, 'frozen'):
     os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
 
 
+# /Users/alpxe/Library/Containers/LayaAssist
 class Main:
     stage = None
 
