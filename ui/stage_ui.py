@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(400, 187)
+        Form.resize(400, 148)
         self.polyBtn = QtWidgets.QPushButton(Form)
         self.polyBtn.setGeometry(QtCore.QRect(20, 100, 113, 32))
         self.polyBtn.setObjectName("polyBtn")
         self.lineEdit = QtWidgets.QLineEdit(Form)
-        self.lineEdit.setGeometry(QtCore.QRect(30, 150, 341, 20))
+        self.lineEdit.setGeometry(QtCore.QRect(30, 170, 341, 20))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -59,6 +59,9 @@ class Ui_Form(object):
         self.libraryBtn = QtWidgets.QPushButton(Form)
         self.libraryBtn.setGeometry(QtCore.QRect(150, 60, 113, 32))
         self.libraryBtn.setObjectName("libraryBtn")
+        self.compressBtn = QtWidgets.QPushButton(Form)
+        self.compressBtn.setGeometry(QtCore.QRect(150, 100, 113, 32))
+        self.compressBtn.setObjectName("compressBtn")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -72,3 +75,4 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Laya项目:"))
         self.pathBtn.setText(_translate("Form", "..."))
         self.libraryBtn.setText(_translate("Form", "库相关"))
+        self.compressBtn.setText(_translate("Form", "压缩发布"))

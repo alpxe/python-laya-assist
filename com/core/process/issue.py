@@ -5,25 +5,22 @@ import shutil
 import time
 import zipfile
 
-"""
-Laya 压缩发布功能
-"""
+from com.core.base.singleton import Singleton
+from com.mvc.model.modellocator import ModelLocator
 
 
-class Main:
-    # 项目 release 目录
-    # basePath = "/Users/alpxe/code/h5/laya/laya-game-box/release"
-    basePath = "/Users/alpxe/code/h5/laya/laya-five/release"
+class Issue(Singleton):
 
-    def __init__(self):
-        web_path = os.path.join(self.basePath, "web")
+    def run(self):
+        base_path = os.path.join(ModelLocator.project, "release")
+        web_path = os.path.join(base_path, "web")
+
         if not os.path.exists(web_path):
-            print("请先发布Laya Release")
-            return
+            return False
 
         release = str(int(time.time()))  # 发布文件夹 时间戳
-        res_path = os.path.join(self.basePath, release)
-        # res_path = os.path.join(self.basePath, "rel")
+        res_path = os.path.join(base_path, release)
+
         if not os.path.exists(res_path):
             os.makedirs(res_path)
 
@@ -71,6 +68,8 @@ class Main:
         with open(os.path.join(res_path, "index.html"), "w", encoding="utf-8") as fs:
             fs.write(html)
 
+        return True
+
     @staticmethod
     def cp_dirs(src, res, ds):
         src_ds = os.path.join(src, ds)
@@ -89,7 +88,3 @@ class Main:
     def cp_file(src, res, fs):
         src_fs = os.path.join(src, fs)
         shutil.copy(src_fs, res)
-
-
-if __name__ == "__main__":
-    Main()

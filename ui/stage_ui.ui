@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>187</height>
+    <height>148</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>150</y>
+     <y>170</y>
      <width>341</width>
      <height>20</height>
     </rect>
@@ -147,6 +147,19 @@
    </property>
    <property name="text">
     <string>库相关</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="compressBtn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>100</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>压缩发布</string>
    </property>
   </widget>
  </widget>

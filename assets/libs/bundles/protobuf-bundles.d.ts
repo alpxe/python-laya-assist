@@ -1201,10 +1201,16 @@ declare namespace Game {
             Peace_Request = 10311,
             Peace_Response = 10312,
             Peace_Notify = 10313,
-            ConfirmPeace_Request = 10314,
-            ConfirmPeace_Response = 10315,
-            ConfirmPeace_Notify = 10316,
-            Links_Notify = 10317
+            AgreePeace_Request = 10314,
+            AgreePeace_Response = 10315,
+            AgreePeace_Notify = 10316,
+            Links_Notify = 10317,
+            Cancel_Request = 10318,
+            Cancel_Response = 10319,
+            Cancel_Notify = 10320,
+            AgreeCancel_Request = 10321,
+            AgreeCancel_Response = 10322,
+            AgreeCancel_Notify = 10323
         }
 
         /** Properties of a ChessBoardRequest. */
@@ -2095,207 +2101,207 @@ declare namespace Game {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ConfirmPeaceRequest. */
-        interface IConfirmPeaceRequest {
+        /** Properties of an AgreePeaceRequest. */
+        interface IAgreePeaceRequest {
         }
 
-        /** Represents a ConfirmPeaceRequest. */
-        class ConfirmPeaceRequest implements IConfirmPeaceRequest {
+        /** Represents an AgreePeaceRequest. */
+        class AgreePeaceRequest implements IAgreePeaceRequest {
 
             /**
-             * Constructs a new ConfirmPeaceRequest.
+             * Constructs a new AgreePeaceRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Game.Fivestone.IConfirmPeaceRequest);
+            constructor(properties?: Game.Fivestone.IAgreePeaceRequest);
 
             /**
-             * Creates a new ConfirmPeaceRequest instance using the specified properties.
+             * Creates a new AgreePeaceRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ConfirmPeaceRequest instance
+             * @returns AgreePeaceRequest instance
              */
-            public static create(properties?: Game.Fivestone.IConfirmPeaceRequest): Game.Fivestone.ConfirmPeaceRequest;
+            public static create(properties?: Game.Fivestone.IAgreePeaceRequest): Game.Fivestone.AgreePeaceRequest;
 
             /**
-             * Encodes the specified ConfirmPeaceRequest message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceRequest.verify|verify} messages.
-             * @param message ConfirmPeaceRequest message or plain object to encode
+             * Encodes the specified AgreePeaceRequest message. Does not implicitly {@link Game.Fivestone.AgreePeaceRequest.verify|verify} messages.
+             * @param message AgreePeaceRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Game.Fivestone.IConfirmPeaceRequest, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: Game.Fivestone.IAgreePeaceRequest, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified ConfirmPeaceRequest message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceRequest.verify|verify} messages.
-             * @param message ConfirmPeaceRequest message or plain object to encode
+             * Encodes the specified AgreePeaceRequest message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceRequest.verify|verify} messages.
+             * @param message AgreePeaceRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Game.Fivestone.IConfirmPeaceRequest, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: Game.Fivestone.IAgreePeaceRequest, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a ConfirmPeaceRequest message from the specified reader or buffer.
+             * Decodes an AgreePeaceRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ConfirmPeaceRequest
+             * @returns AgreePeaceRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.ConfirmPeaceRequest;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreePeaceRequest;
 
             /**
-             * Decodes a ConfirmPeaceRequest message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceRequest message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns ConfirmPeaceRequest
+             * @returns AgreePeaceRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.ConfirmPeaceRequest;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreePeaceRequest;
 
             /**
-             * Verifies a ConfirmPeaceRequest message.
+             * Verifies an AgreePeaceRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ConfirmPeaceResponse. */
-        interface IConfirmPeaceResponse {
+        /** Properties of an AgreePeaceResponse. */
+        interface IAgreePeaceResponse {
 
-            /** ConfirmPeaceResponse status */
+            /** AgreePeaceResponse status */
             status?: (number|null);
 
-            /** ConfirmPeaceResponse msg */
+            /** AgreePeaceResponse msg */
             msg?: (string|null);
         }
 
-        /** Represents a ConfirmPeaceResponse. */
-        class ConfirmPeaceResponse implements IConfirmPeaceResponse {
+        /** Represents an AgreePeaceResponse. */
+        class AgreePeaceResponse implements IAgreePeaceResponse {
 
             /**
-             * Constructs a new ConfirmPeaceResponse.
+             * Constructs a new AgreePeaceResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Game.Fivestone.IConfirmPeaceResponse);
+            constructor(properties?: Game.Fivestone.IAgreePeaceResponse);
 
-            /** ConfirmPeaceResponse status. */
+            /** AgreePeaceResponse status. */
             public status: number;
 
-            /** ConfirmPeaceResponse msg. */
+            /** AgreePeaceResponse msg. */
             public msg: string;
 
             /**
-             * Creates a new ConfirmPeaceResponse instance using the specified properties.
+             * Creates a new AgreePeaceResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ConfirmPeaceResponse instance
+             * @returns AgreePeaceResponse instance
              */
-            public static create(properties?: Game.Fivestone.IConfirmPeaceResponse): Game.Fivestone.ConfirmPeaceResponse;
+            public static create(properties?: Game.Fivestone.IAgreePeaceResponse): Game.Fivestone.AgreePeaceResponse;
 
             /**
-             * Encodes the specified ConfirmPeaceResponse message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceResponse.verify|verify} messages.
-             * @param message ConfirmPeaceResponse message or plain object to encode
+             * Encodes the specified AgreePeaceResponse message. Does not implicitly {@link Game.Fivestone.AgreePeaceResponse.verify|verify} messages.
+             * @param message AgreePeaceResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Game.Fivestone.IConfirmPeaceResponse, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: Game.Fivestone.IAgreePeaceResponse, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified ConfirmPeaceResponse message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceResponse.verify|verify} messages.
-             * @param message ConfirmPeaceResponse message or plain object to encode
+             * Encodes the specified AgreePeaceResponse message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceResponse.verify|verify} messages.
+             * @param message AgreePeaceResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Game.Fivestone.IConfirmPeaceResponse, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: Game.Fivestone.IAgreePeaceResponse, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a ConfirmPeaceResponse message from the specified reader or buffer.
+             * Decodes an AgreePeaceResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ConfirmPeaceResponse
+             * @returns AgreePeaceResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.ConfirmPeaceResponse;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreePeaceResponse;
 
             /**
-             * Decodes a ConfirmPeaceResponse message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceResponse message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns ConfirmPeaceResponse
+             * @returns AgreePeaceResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.ConfirmPeaceResponse;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreePeaceResponse;
 
             /**
-             * Verifies a ConfirmPeaceResponse message.
+             * Verifies an AgreePeaceResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ConfirmPeaceNotify. */
-        interface IConfirmPeaceNotify {
+        /** Properties of an AgreePeaceNotify. */
+        interface IAgreePeaceNotify {
 
-            /** ConfirmPeaceNotify uid */
+            /** AgreePeaceNotify uid */
             uid?: (string|null);
         }
 
-        /** Represents a ConfirmPeaceNotify. */
-        class ConfirmPeaceNotify implements IConfirmPeaceNotify {
+        /** Represents an AgreePeaceNotify. */
+        class AgreePeaceNotify implements IAgreePeaceNotify {
 
             /**
-             * Constructs a new ConfirmPeaceNotify.
+             * Constructs a new AgreePeaceNotify.
              * @param [properties] Properties to set
              */
-            constructor(properties?: Game.Fivestone.IConfirmPeaceNotify);
+            constructor(properties?: Game.Fivestone.IAgreePeaceNotify);
 
-            /** ConfirmPeaceNotify uid. */
+            /** AgreePeaceNotify uid. */
             public uid: string;
 
             /**
-             * Creates a new ConfirmPeaceNotify instance using the specified properties.
+             * Creates a new AgreePeaceNotify instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ConfirmPeaceNotify instance
+             * @returns AgreePeaceNotify instance
              */
-            public static create(properties?: Game.Fivestone.IConfirmPeaceNotify): Game.Fivestone.ConfirmPeaceNotify;
+            public static create(properties?: Game.Fivestone.IAgreePeaceNotify): Game.Fivestone.AgreePeaceNotify;
 
             /**
-             * Encodes the specified ConfirmPeaceNotify message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceNotify.verify|verify} messages.
-             * @param message ConfirmPeaceNotify message or plain object to encode
+             * Encodes the specified AgreePeaceNotify message. Does not implicitly {@link Game.Fivestone.AgreePeaceNotify.verify|verify} messages.
+             * @param message AgreePeaceNotify message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: Game.Fivestone.IConfirmPeaceNotify, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: Game.Fivestone.IAgreePeaceNotify, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified ConfirmPeaceNotify message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceNotify.verify|verify} messages.
-             * @param message ConfirmPeaceNotify message or plain object to encode
+             * Encodes the specified AgreePeaceNotify message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceNotify.verify|verify} messages.
+             * @param message AgreePeaceNotify message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: Game.Fivestone.IConfirmPeaceNotify, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: Game.Fivestone.IAgreePeaceNotify, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a ConfirmPeaceNotify message from the specified reader or buffer.
+             * Decodes an AgreePeaceNotify message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ConfirmPeaceNotify
+             * @returns AgreePeaceNotify
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.ConfirmPeaceNotify;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreePeaceNotify;
 
             /**
-             * Decodes a ConfirmPeaceNotify message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceNotify message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns ConfirmPeaceNotify
+             * @returns AgreePeaceNotify
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.ConfirmPeaceNotify;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreePeaceNotify;
 
             /**
-             * Verifies a ConfirmPeaceNotify message.
+             * Verifies an AgreePeaceNotify message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -2383,6 +2389,432 @@ declare namespace Game {
 
             /**
              * Verifies a LinksNotify message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CancelRequest. */
+        interface ICancelRequest {
+        }
+
+        /** Represents a CancelRequest. */
+        class CancelRequest implements ICancelRequest {
+
+            /**
+             * Constructs a new CancelRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.ICancelRequest);
+
+            /**
+             * Creates a new CancelRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CancelRequest instance
+             */
+            public static create(properties?: Game.Fivestone.ICancelRequest): Game.Fivestone.CancelRequest;
+
+            /**
+             * Encodes the specified CancelRequest message. Does not implicitly {@link Game.Fivestone.CancelRequest.verify|verify} messages.
+             * @param message CancelRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.ICancelRequest, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified CancelRequest message, length delimited. Does not implicitly {@link Game.Fivestone.CancelRequest.verify|verify} messages.
+             * @param message CancelRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.ICancelRequest, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a CancelRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.CancelRequest;
+
+            /**
+             * Decodes a CancelRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.CancelRequest;
+
+            /**
+             * Verifies a CancelRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CancelResponse. */
+        interface ICancelResponse {
+
+            /** CancelResponse status */
+            status?: (number|null);
+
+            /** CancelResponse msg */
+            msg?: (string|null);
+        }
+
+        /** Represents a CancelResponse. */
+        class CancelResponse implements ICancelResponse {
+
+            /**
+             * Constructs a new CancelResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.ICancelResponse);
+
+            /** CancelResponse status. */
+            public status: number;
+
+            /** CancelResponse msg. */
+            public msg: string;
+
+            /**
+             * Creates a new CancelResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CancelResponse instance
+             */
+            public static create(properties?: Game.Fivestone.ICancelResponse): Game.Fivestone.CancelResponse;
+
+            /**
+             * Encodes the specified CancelResponse message. Does not implicitly {@link Game.Fivestone.CancelResponse.verify|verify} messages.
+             * @param message CancelResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.ICancelResponse, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified CancelResponse message, length delimited. Does not implicitly {@link Game.Fivestone.CancelResponse.verify|verify} messages.
+             * @param message CancelResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.ICancelResponse, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a CancelResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.CancelResponse;
+
+            /**
+             * Decodes a CancelResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.CancelResponse;
+
+            /**
+             * Verifies a CancelResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CancelNotify. */
+        interface ICancelNotify {
+        }
+
+        /** Represents a CancelNotify. */
+        class CancelNotify implements ICancelNotify {
+
+            /**
+             * Constructs a new CancelNotify.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.ICancelNotify);
+
+            /**
+             * Creates a new CancelNotify instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CancelNotify instance
+             */
+            public static create(properties?: Game.Fivestone.ICancelNotify): Game.Fivestone.CancelNotify;
+
+            /**
+             * Encodes the specified CancelNotify message. Does not implicitly {@link Game.Fivestone.CancelNotify.verify|verify} messages.
+             * @param message CancelNotify message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.ICancelNotify, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified CancelNotify message, length delimited. Does not implicitly {@link Game.Fivestone.CancelNotify.verify|verify} messages.
+             * @param message CancelNotify message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.ICancelNotify, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a CancelNotify message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.CancelNotify;
+
+            /**
+             * Decodes a CancelNotify message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.CancelNotify;
+
+            /**
+             * Verifies a CancelNotify message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AgreeCancelRequest. */
+        interface IAgreeCancelRequest {
+
+            /** AgreeCancelRequest agree */
+            agree?: (number|null);
+        }
+
+        /** Represents an AgreeCancelRequest. */
+        class AgreeCancelRequest implements IAgreeCancelRequest {
+
+            /**
+             * Constructs a new AgreeCancelRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.IAgreeCancelRequest);
+
+            /** AgreeCancelRequest agree. */
+            public agree: number;
+
+            /**
+             * Creates a new AgreeCancelRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AgreeCancelRequest instance
+             */
+            public static create(properties?: Game.Fivestone.IAgreeCancelRequest): Game.Fivestone.AgreeCancelRequest;
+
+            /**
+             * Encodes the specified AgreeCancelRequest message. Does not implicitly {@link Game.Fivestone.AgreeCancelRequest.verify|verify} messages.
+             * @param message AgreeCancelRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.IAgreeCancelRequest, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified AgreeCancelRequest message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelRequest.verify|verify} messages.
+             * @param message AgreeCancelRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.IAgreeCancelRequest, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an AgreeCancelRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AgreeCancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreeCancelRequest;
+
+            /**
+             * Decodes an AgreeCancelRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AgreeCancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreeCancelRequest;
+
+            /**
+             * Verifies an AgreeCancelRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AgreeCancelResponse. */
+        interface IAgreeCancelResponse {
+
+            /** AgreeCancelResponse status */
+            status?: (number|null);
+
+            /** AgreeCancelResponse msg */
+            msg?: (string|null);
+        }
+
+        /** Represents an AgreeCancelResponse. */
+        class AgreeCancelResponse implements IAgreeCancelResponse {
+
+            /**
+             * Constructs a new AgreeCancelResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.IAgreeCancelResponse);
+
+            /** AgreeCancelResponse status. */
+            public status: number;
+
+            /** AgreeCancelResponse msg. */
+            public msg: string;
+
+            /**
+             * Creates a new AgreeCancelResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AgreeCancelResponse instance
+             */
+            public static create(properties?: Game.Fivestone.IAgreeCancelResponse): Game.Fivestone.AgreeCancelResponse;
+
+            /**
+             * Encodes the specified AgreeCancelResponse message. Does not implicitly {@link Game.Fivestone.AgreeCancelResponse.verify|verify} messages.
+             * @param message AgreeCancelResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.IAgreeCancelResponse, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified AgreeCancelResponse message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelResponse.verify|verify} messages.
+             * @param message AgreeCancelResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.IAgreeCancelResponse, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an AgreeCancelResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AgreeCancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreeCancelResponse;
+
+            /**
+             * Decodes an AgreeCancelResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AgreeCancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreeCancelResponse;
+
+            /**
+             * Verifies an AgreeCancelResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AgreeCancelNotify. */
+        interface IAgreeCancelNotify {
+
+            /** AgreeCancelNotify uid */
+            uid?: (string|null);
+
+            /** AgreeCancelNotify agree */
+            agree?: (number|null);
+
+            /** AgreeCancelNotify cards */
+            cards?: (number[]|null);
+        }
+
+        /** Represents an AgreeCancelNotify. */
+        class AgreeCancelNotify implements IAgreeCancelNotify {
+
+            /**
+             * Constructs a new AgreeCancelNotify.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: Game.Fivestone.IAgreeCancelNotify);
+
+            /** AgreeCancelNotify uid. */
+            public uid: string;
+
+            /** AgreeCancelNotify agree. */
+            public agree: number;
+
+            /** AgreeCancelNotify cards. */
+            public cards: number[];
+
+            /**
+             * Creates a new AgreeCancelNotify instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AgreeCancelNotify instance
+             */
+            public static create(properties?: Game.Fivestone.IAgreeCancelNotify): Game.Fivestone.AgreeCancelNotify;
+
+            /**
+             * Encodes the specified AgreeCancelNotify message. Does not implicitly {@link Game.Fivestone.AgreeCancelNotify.verify|verify} messages.
+             * @param message AgreeCancelNotify message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: Game.Fivestone.IAgreeCancelNotify, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Encodes the specified AgreeCancelNotify message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelNotify.verify|verify} messages.
+             * @param message AgreeCancelNotify message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: Game.Fivestone.IAgreeCancelNotify, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an AgreeCancelNotify message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AgreeCancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): Game.Fivestone.AgreeCancelNotify;
+
+            /**
+             * Decodes an AgreeCancelNotify message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns AgreeCancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): Game.Fivestone.AgreeCancelNotify;
+
+            /**
+             * Verifies an AgreeCancelNotify message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

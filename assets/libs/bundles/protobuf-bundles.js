@@ -2566,10 +2566,16 @@ $root.Game = (function() {
          * @property {number} Peace_Request=10311 Peace_Request value
          * @property {number} Peace_Response=10312 Peace_Response value
          * @property {number} Peace_Notify=10313 Peace_Notify value
-         * @property {number} ConfirmPeace_Request=10314 ConfirmPeace_Request value
-         * @property {number} ConfirmPeace_Response=10315 ConfirmPeace_Response value
-         * @property {number} ConfirmPeace_Notify=10316 ConfirmPeace_Notify value
+         * @property {number} AgreePeace_Request=10314 AgreePeace_Request value
+         * @property {number} AgreePeace_Response=10315 AgreePeace_Response value
+         * @property {number} AgreePeace_Notify=10316 AgreePeace_Notify value
          * @property {number} Links_Notify=10317 Links_Notify value
+         * @property {number} Cancel_Request=10318 Cancel_Request value
+         * @property {number} Cancel_Response=10319 Cancel_Response value
+         * @property {number} Cancel_Notify=10320 Cancel_Notify value
+         * @property {number} AgreeCancel_Request=10321 AgreeCancel_Request value
+         * @property {number} AgreeCancel_Response=10322 AgreeCancel_Response value
+         * @property {number} AgreeCancel_Notify=10323 AgreeCancel_Notify value
          */
         Fivestone.MsgId = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -2585,10 +2591,16 @@ $root.Game = (function() {
             values[valuesById[10311] = "Peace_Request"] = 10311;
             values[valuesById[10312] = "Peace_Response"] = 10312;
             values[valuesById[10313] = "Peace_Notify"] = 10313;
-            values[valuesById[10314] = "ConfirmPeace_Request"] = 10314;
-            values[valuesById[10315] = "ConfirmPeace_Response"] = 10315;
-            values[valuesById[10316] = "ConfirmPeace_Notify"] = 10316;
+            values[valuesById[10314] = "AgreePeace_Request"] = 10314;
+            values[valuesById[10315] = "AgreePeace_Response"] = 10315;
+            values[valuesById[10316] = "AgreePeace_Notify"] = 10316;
             values[valuesById[10317] = "Links_Notify"] = 10317;
+            values[valuesById[10318] = "Cancel_Request"] = 10318;
+            values[valuesById[10319] = "Cancel_Response"] = 10319;
+            values[valuesById[10320] = "Cancel_Notify"] = 10320;
+            values[valuesById[10321] = "AgreeCancel_Request"] = 10321;
+            values[valuesById[10322] = "AgreeCancel_Response"] = 10322;
+            values[valuesById[10323] = "AgreeCancel_Notify"] = 10323;
             return values;
         })();
 
@@ -4468,23 +4480,23 @@ $root.Game = (function() {
             return PeaceNotify;
         })();
 
-        Fivestone.ConfirmPeaceRequest = (function() {
+        Fivestone.AgreePeaceRequest = (function() {
 
             /**
-             * Properties of a ConfirmPeaceRequest.
+             * Properties of an AgreePeaceRequest.
              * @memberof Game.Fivestone
-             * @interface IConfirmPeaceRequest
+             * @interface IAgreePeaceRequest
              */
 
             /**
-             * Constructs a new ConfirmPeaceRequest.
+             * Constructs a new AgreePeaceRequest.
              * @memberof Game.Fivestone
-             * @classdesc Represents a ConfirmPeaceRequest.
-             * @implements IConfirmPeaceRequest
+             * @classdesc Represents an AgreePeaceRequest.
+             * @implements IAgreePeaceRequest
              * @constructor
-             * @param {Game.Fivestone.IConfirmPeaceRequest=} [properties] Properties to set
+             * @param {Game.Fivestone.IAgreePeaceRequest=} [properties] Properties to set
              */
-            function ConfirmPeaceRequest(properties) {
+            function AgreePeaceRequest(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4492,60 +4504,60 @@ $root.Game = (function() {
             }
 
             /**
-             * Creates a new ConfirmPeaceRequest instance using the specified properties.
+             * Creates a new AgreePeaceRequest instance using the specified properties.
              * @function create
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceRequest=} [properties] Properties to set
-             * @returns {Game.Fivestone.ConfirmPeaceRequest} ConfirmPeaceRequest instance
+             * @param {Game.Fivestone.IAgreePeaceRequest=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreePeaceRequest} AgreePeaceRequest instance
              */
-            ConfirmPeaceRequest.create = function create(properties) {
-                return new ConfirmPeaceRequest(properties);
+            AgreePeaceRequest.create = function create(properties) {
+                return new AgreePeaceRequest(properties);
             };
 
             /**
-             * Encodes the specified ConfirmPeaceRequest message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceRequest.verify|verify} messages.
+             * Encodes the specified AgreePeaceRequest message. Does not implicitly {@link Game.Fivestone.AgreePeaceRequest.verify|verify} messages.
              * @function encode
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceRequest} message ConfirmPeaceRequest message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceRequest} message AgreePeaceRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceRequest.encode = function encode(message, writer) {
+            AgreePeaceRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 return writer;
             };
 
             /**
-             * Encodes the specified ConfirmPeaceRequest message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceRequest.verify|verify} messages.
+             * Encodes the specified AgreePeaceRequest message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceRequest.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceRequest} message ConfirmPeaceRequest message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceRequest} message AgreePeaceRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            AgreePeaceRequest.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes a ConfirmPeaceRequest message from the specified reader or buffer.
+             * Decodes an AgreePeaceRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Game.Fivestone.ConfirmPeaceRequest} ConfirmPeaceRequest
+             * @returns {Game.Fivestone.AgreePeaceRequest} AgreePeaceRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceRequest.decode = function decode(reader, length) {
+            AgreePeaceRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.ConfirmPeaceRequest();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreePeaceRequest();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4558,57 +4570,57 @@ $root.Game = (function() {
             };
 
             /**
-             * Decodes a ConfirmPeaceRequest message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceRequest message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Game.Fivestone.ConfirmPeaceRequest} ConfirmPeaceRequest
+             * @returns {Game.Fivestone.AgreePeaceRequest} AgreePeaceRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceRequest.decodeDelimited = function decodeDelimited(reader) {
+            AgreePeaceRequest.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies a ConfirmPeaceRequest message.
+             * Verifies an AgreePeaceRequest message.
              * @function verify
-             * @memberof Game.Fivestone.ConfirmPeaceRequest
+             * @memberof Game.Fivestone.AgreePeaceRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ConfirmPeaceRequest.verify = function verify(message) {
+            AgreePeaceRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 return null;
             };
 
-            return ConfirmPeaceRequest;
+            return AgreePeaceRequest;
         })();
 
-        Fivestone.ConfirmPeaceResponse = (function() {
+        Fivestone.AgreePeaceResponse = (function() {
 
             /**
-             * Properties of a ConfirmPeaceResponse.
+             * Properties of an AgreePeaceResponse.
              * @memberof Game.Fivestone
-             * @interface IConfirmPeaceResponse
-             * @property {number|null} [status] ConfirmPeaceResponse status
-             * @property {string|null} [msg] ConfirmPeaceResponse msg
+             * @interface IAgreePeaceResponse
+             * @property {number|null} [status] AgreePeaceResponse status
+             * @property {string|null} [msg] AgreePeaceResponse msg
              */
 
             /**
-             * Constructs a new ConfirmPeaceResponse.
+             * Constructs a new AgreePeaceResponse.
              * @memberof Game.Fivestone
-             * @classdesc Represents a ConfirmPeaceResponse.
-             * @implements IConfirmPeaceResponse
+             * @classdesc Represents an AgreePeaceResponse.
+             * @implements IAgreePeaceResponse
              * @constructor
-             * @param {Game.Fivestone.IConfirmPeaceResponse=} [properties] Properties to set
+             * @param {Game.Fivestone.IAgreePeaceResponse=} [properties] Properties to set
              */
-            function ConfirmPeaceResponse(properties) {
+            function AgreePeaceResponse(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4616,43 +4628,43 @@ $root.Game = (function() {
             }
 
             /**
-             * ConfirmPeaceResponse status.
+             * AgreePeaceResponse status.
              * @member {number} status
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @instance
              */
-            ConfirmPeaceResponse.prototype.status = 0;
+            AgreePeaceResponse.prototype.status = 0;
 
             /**
-             * ConfirmPeaceResponse msg.
+             * AgreePeaceResponse msg.
              * @member {string} msg
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @instance
              */
-            ConfirmPeaceResponse.prototype.msg = "";
+            AgreePeaceResponse.prototype.msg = "";
 
             /**
-             * Creates a new ConfirmPeaceResponse instance using the specified properties.
+             * Creates a new AgreePeaceResponse instance using the specified properties.
              * @function create
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceResponse=} [properties] Properties to set
-             * @returns {Game.Fivestone.ConfirmPeaceResponse} ConfirmPeaceResponse instance
+             * @param {Game.Fivestone.IAgreePeaceResponse=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreePeaceResponse} AgreePeaceResponse instance
              */
-            ConfirmPeaceResponse.create = function create(properties) {
-                return new ConfirmPeaceResponse(properties);
+            AgreePeaceResponse.create = function create(properties) {
+                return new AgreePeaceResponse(properties);
             };
 
             /**
-             * Encodes the specified ConfirmPeaceResponse message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceResponse.verify|verify} messages.
+             * Encodes the specified AgreePeaceResponse message. Does not implicitly {@link Game.Fivestone.AgreePeaceResponse.verify|verify} messages.
              * @function encode
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceResponse} message ConfirmPeaceResponse message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceResponse} message AgreePeaceResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceResponse.encode = function encode(message, writer) {
+            AgreePeaceResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.status != null && Object.hasOwnProperty.call(message, "status"))
@@ -4663,33 +4675,33 @@ $root.Game = (function() {
             };
 
             /**
-             * Encodes the specified ConfirmPeaceResponse message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceResponse.verify|verify} messages.
+             * Encodes the specified AgreePeaceResponse message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceResponse.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceResponse} message ConfirmPeaceResponse message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceResponse} message AgreePeaceResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceResponse.encodeDelimited = function encodeDelimited(message, writer) {
+            AgreePeaceResponse.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes a ConfirmPeaceResponse message from the specified reader or buffer.
+             * Decodes an AgreePeaceResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Game.Fivestone.ConfirmPeaceResponse} ConfirmPeaceResponse
+             * @returns {Game.Fivestone.AgreePeaceResponse} AgreePeaceResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceResponse.decode = function decode(reader, length) {
+            AgreePeaceResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.ConfirmPeaceResponse();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreePeaceResponse();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4708,30 +4720,30 @@ $root.Game = (function() {
             };
 
             /**
-             * Decodes a ConfirmPeaceResponse message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceResponse message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Game.Fivestone.ConfirmPeaceResponse} ConfirmPeaceResponse
+             * @returns {Game.Fivestone.AgreePeaceResponse} AgreePeaceResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceResponse.decodeDelimited = function decodeDelimited(reader) {
+            AgreePeaceResponse.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies a ConfirmPeaceResponse message.
+             * Verifies an AgreePeaceResponse message.
              * @function verify
-             * @memberof Game.Fivestone.ConfirmPeaceResponse
+             * @memberof Game.Fivestone.AgreePeaceResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ConfirmPeaceResponse.verify = function verify(message) {
+            AgreePeaceResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.status != null && message.hasOwnProperty("status"))
@@ -4743,27 +4755,27 @@ $root.Game = (function() {
                 return null;
             };
 
-            return ConfirmPeaceResponse;
+            return AgreePeaceResponse;
         })();
 
-        Fivestone.ConfirmPeaceNotify = (function() {
+        Fivestone.AgreePeaceNotify = (function() {
 
             /**
-             * Properties of a ConfirmPeaceNotify.
+             * Properties of an AgreePeaceNotify.
              * @memberof Game.Fivestone
-             * @interface IConfirmPeaceNotify
-             * @property {string|null} [uid] ConfirmPeaceNotify uid
+             * @interface IAgreePeaceNotify
+             * @property {string|null} [uid] AgreePeaceNotify uid
              */
 
             /**
-             * Constructs a new ConfirmPeaceNotify.
+             * Constructs a new AgreePeaceNotify.
              * @memberof Game.Fivestone
-             * @classdesc Represents a ConfirmPeaceNotify.
-             * @implements IConfirmPeaceNotify
+             * @classdesc Represents an AgreePeaceNotify.
+             * @implements IAgreePeaceNotify
              * @constructor
-             * @param {Game.Fivestone.IConfirmPeaceNotify=} [properties] Properties to set
+             * @param {Game.Fivestone.IAgreePeaceNotify=} [properties] Properties to set
              */
-            function ConfirmPeaceNotify(properties) {
+            function AgreePeaceNotify(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4771,35 +4783,35 @@ $root.Game = (function() {
             }
 
             /**
-             * ConfirmPeaceNotify uid.
+             * AgreePeaceNotify uid.
              * @member {string} uid
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @instance
              */
-            ConfirmPeaceNotify.prototype.uid = "";
+            AgreePeaceNotify.prototype.uid = "";
 
             /**
-             * Creates a new ConfirmPeaceNotify instance using the specified properties.
+             * Creates a new AgreePeaceNotify instance using the specified properties.
              * @function create
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceNotify=} [properties] Properties to set
-             * @returns {Game.Fivestone.ConfirmPeaceNotify} ConfirmPeaceNotify instance
+             * @param {Game.Fivestone.IAgreePeaceNotify=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreePeaceNotify} AgreePeaceNotify instance
              */
-            ConfirmPeaceNotify.create = function create(properties) {
-                return new ConfirmPeaceNotify(properties);
+            AgreePeaceNotify.create = function create(properties) {
+                return new AgreePeaceNotify(properties);
             };
 
             /**
-             * Encodes the specified ConfirmPeaceNotify message. Does not implicitly {@link Game.Fivestone.ConfirmPeaceNotify.verify|verify} messages.
+             * Encodes the specified AgreePeaceNotify message. Does not implicitly {@link Game.Fivestone.AgreePeaceNotify.verify|verify} messages.
              * @function encode
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceNotify} message ConfirmPeaceNotify message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceNotify} message AgreePeaceNotify message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceNotify.encode = function encode(message, writer) {
+            AgreePeaceNotify.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.uid != null && Object.hasOwnProperty.call(message, "uid"))
@@ -4808,33 +4820,33 @@ $root.Game = (function() {
             };
 
             /**
-             * Encodes the specified ConfirmPeaceNotify message, length delimited. Does not implicitly {@link Game.Fivestone.ConfirmPeaceNotify.verify|verify} messages.
+             * Encodes the specified AgreePeaceNotify message, length delimited. Does not implicitly {@link Game.Fivestone.AgreePeaceNotify.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
-             * @param {Game.Fivestone.IConfirmPeaceNotify} message ConfirmPeaceNotify message or plain object to encode
+             * @param {Game.Fivestone.IAgreePeaceNotify} message AgreePeaceNotify message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ConfirmPeaceNotify.encodeDelimited = function encodeDelimited(message, writer) {
+            AgreePeaceNotify.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes a ConfirmPeaceNotify message from the specified reader or buffer.
+             * Decodes an AgreePeaceNotify message from the specified reader or buffer.
              * @function decode
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {Game.Fivestone.ConfirmPeaceNotify} ConfirmPeaceNotify
+             * @returns {Game.Fivestone.AgreePeaceNotify} AgreePeaceNotify
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceNotify.decode = function decode(reader, length) {
+            AgreePeaceNotify.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.ConfirmPeaceNotify();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreePeaceNotify();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4850,30 +4862,30 @@ $root.Game = (function() {
             };
 
             /**
-             * Decodes a ConfirmPeaceNotify message from the specified reader or buffer, length delimited.
+             * Decodes an AgreePeaceNotify message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {Game.Fivestone.ConfirmPeaceNotify} ConfirmPeaceNotify
+             * @returns {Game.Fivestone.AgreePeaceNotify} AgreePeaceNotify
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ConfirmPeaceNotify.decodeDelimited = function decodeDelimited(reader) {
+            AgreePeaceNotify.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies a ConfirmPeaceNotify message.
+             * Verifies an AgreePeaceNotify message.
              * @function verify
-             * @memberof Game.Fivestone.ConfirmPeaceNotify
+             * @memberof Game.Fivestone.AgreePeaceNotify
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ConfirmPeaceNotify.verify = function verify(message) {
+            AgreePeaceNotify.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.uid != null && message.hasOwnProperty("uid"))
@@ -4882,7 +4894,7 @@ $root.Game = (function() {
                 return null;
             };
 
-            return ConfirmPeaceNotify;
+            return AgreePeaceNotify;
         })();
 
         Fivestone.LinksNotify = (function() {
@@ -5073,6 +5085,887 @@ $root.Game = (function() {
             };
 
             return LinksNotify;
+        })();
+
+        Fivestone.CancelRequest = (function() {
+
+            /**
+             * Properties of a CancelRequest.
+             * @memberof Game.Fivestone
+             * @interface ICancelRequest
+             */
+
+            /**
+             * Constructs a new CancelRequest.
+             * @memberof Game.Fivestone
+             * @classdesc Represents a CancelRequest.
+             * @implements ICancelRequest
+             * @constructor
+             * @param {Game.Fivestone.ICancelRequest=} [properties] Properties to set
+             */
+            function CancelRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new CancelRequest instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {Game.Fivestone.ICancelRequest=} [properties] Properties to set
+             * @returns {Game.Fivestone.CancelRequest} CancelRequest instance
+             */
+            CancelRequest.create = function create(properties) {
+                return new CancelRequest(properties);
+            };
+
+            /**
+             * Encodes the specified CancelRequest message. Does not implicitly {@link Game.Fivestone.CancelRequest.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {Game.Fivestone.ICancelRequest} message CancelRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CancelRequest message, length delimited. Does not implicitly {@link Game.Fivestone.CancelRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {Game.Fivestone.ICancelRequest} message CancelRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CancelRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.CancelRequest} CancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.CancelRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CancelRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.CancelRequest} CancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CancelRequest message.
+             * @function verify
+             * @memberof Game.Fivestone.CancelRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CancelRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return CancelRequest;
+        })();
+
+        Fivestone.CancelResponse = (function() {
+
+            /**
+             * Properties of a CancelResponse.
+             * @memberof Game.Fivestone
+             * @interface ICancelResponse
+             * @property {number|null} [status] CancelResponse status
+             * @property {string|null} [msg] CancelResponse msg
+             */
+
+            /**
+             * Constructs a new CancelResponse.
+             * @memberof Game.Fivestone
+             * @classdesc Represents a CancelResponse.
+             * @implements ICancelResponse
+             * @constructor
+             * @param {Game.Fivestone.ICancelResponse=} [properties] Properties to set
+             */
+            function CancelResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CancelResponse status.
+             * @member {number} status
+             * @memberof Game.Fivestone.CancelResponse
+             * @instance
+             */
+            CancelResponse.prototype.status = 0;
+
+            /**
+             * CancelResponse msg.
+             * @member {string} msg
+             * @memberof Game.Fivestone.CancelResponse
+             * @instance
+             */
+            CancelResponse.prototype.msg = "";
+
+            /**
+             * Creates a new CancelResponse instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {Game.Fivestone.ICancelResponse=} [properties] Properties to set
+             * @returns {Game.Fivestone.CancelResponse} CancelResponse instance
+             */
+            CancelResponse.create = function create(properties) {
+                return new CancelResponse(properties);
+            };
+
+            /**
+             * Encodes the specified CancelResponse message. Does not implicitly {@link Game.Fivestone.CancelResponse.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {Game.Fivestone.ICancelResponse} message CancelResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.status);
+                if (message.msg != null && Object.hasOwnProperty.call(message, "msg"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.msg);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CancelResponse message, length delimited. Does not implicitly {@link Game.Fivestone.CancelResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {Game.Fivestone.ICancelResponse} message CancelResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CancelResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.CancelResponse} CancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.CancelResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.status = reader.int32();
+                        break;
+                    case 2:
+                        message.msg = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CancelResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.CancelResponse} CancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CancelResponse message.
+             * @function verify
+             * @memberof Game.Fivestone.CancelResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CancelResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.status != null && message.hasOwnProperty("status"))
+                    if (!$util.isInteger(message.status))
+                        return "status: integer expected";
+                if (message.msg != null && message.hasOwnProperty("msg"))
+                    if (!$util.isString(message.msg))
+                        return "msg: string expected";
+                return null;
+            };
+
+            return CancelResponse;
+        })();
+
+        Fivestone.CancelNotify = (function() {
+
+            /**
+             * Properties of a CancelNotify.
+             * @memberof Game.Fivestone
+             * @interface ICancelNotify
+             */
+
+            /**
+             * Constructs a new CancelNotify.
+             * @memberof Game.Fivestone
+             * @classdesc Represents a CancelNotify.
+             * @implements ICancelNotify
+             * @constructor
+             * @param {Game.Fivestone.ICancelNotify=} [properties] Properties to set
+             */
+            function CancelNotify(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new CancelNotify instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {Game.Fivestone.ICancelNotify=} [properties] Properties to set
+             * @returns {Game.Fivestone.CancelNotify} CancelNotify instance
+             */
+            CancelNotify.create = function create(properties) {
+                return new CancelNotify(properties);
+            };
+
+            /**
+             * Encodes the specified CancelNotify message. Does not implicitly {@link Game.Fivestone.CancelNotify.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {Game.Fivestone.ICancelNotify} message CancelNotify message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelNotify.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CancelNotify message, length delimited. Does not implicitly {@link Game.Fivestone.CancelNotify.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {Game.Fivestone.ICancelNotify} message CancelNotify message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CancelNotify.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CancelNotify message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.CancelNotify} CancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelNotify.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.CancelNotify();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CancelNotify message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.CancelNotify} CancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CancelNotify.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CancelNotify message.
+             * @function verify
+             * @memberof Game.Fivestone.CancelNotify
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CancelNotify.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return CancelNotify;
+        })();
+
+        Fivestone.AgreeCancelRequest = (function() {
+
+            /**
+             * Properties of an AgreeCancelRequest.
+             * @memberof Game.Fivestone
+             * @interface IAgreeCancelRequest
+             * @property {number|null} [agree] AgreeCancelRequest agree
+             */
+
+            /**
+             * Constructs a new AgreeCancelRequest.
+             * @memberof Game.Fivestone
+             * @classdesc Represents an AgreeCancelRequest.
+             * @implements IAgreeCancelRequest
+             * @constructor
+             * @param {Game.Fivestone.IAgreeCancelRequest=} [properties] Properties to set
+             */
+            function AgreeCancelRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * AgreeCancelRequest agree.
+             * @member {number} agree
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @instance
+             */
+            AgreeCancelRequest.prototype.agree = 0;
+
+            /**
+             * Creates a new AgreeCancelRequest instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelRequest=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreeCancelRequest} AgreeCancelRequest instance
+             */
+            AgreeCancelRequest.create = function create(properties) {
+                return new AgreeCancelRequest(properties);
+            };
+
+            /**
+             * Encodes the specified AgreeCancelRequest message. Does not implicitly {@link Game.Fivestone.AgreeCancelRequest.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelRequest} message AgreeCancelRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.agree != null && Object.hasOwnProperty.call(message, "agree"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.agree);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified AgreeCancelRequest message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelRequest} message AgreeCancelRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an AgreeCancelRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.AgreeCancelRequest} AgreeCancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreeCancelRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.agree = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an AgreeCancelRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.AgreeCancelRequest} AgreeCancelRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an AgreeCancelRequest message.
+             * @function verify
+             * @memberof Game.Fivestone.AgreeCancelRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AgreeCancelRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.agree != null && message.hasOwnProperty("agree"))
+                    if (!$util.isInteger(message.agree))
+                        return "agree: integer expected";
+                return null;
+            };
+
+            return AgreeCancelRequest;
+        })();
+
+        Fivestone.AgreeCancelResponse = (function() {
+
+            /**
+             * Properties of an AgreeCancelResponse.
+             * @memberof Game.Fivestone
+             * @interface IAgreeCancelResponse
+             * @property {number|null} [status] AgreeCancelResponse status
+             * @property {string|null} [msg] AgreeCancelResponse msg
+             */
+
+            /**
+             * Constructs a new AgreeCancelResponse.
+             * @memberof Game.Fivestone
+             * @classdesc Represents an AgreeCancelResponse.
+             * @implements IAgreeCancelResponse
+             * @constructor
+             * @param {Game.Fivestone.IAgreeCancelResponse=} [properties] Properties to set
+             */
+            function AgreeCancelResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * AgreeCancelResponse status.
+             * @member {number} status
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @instance
+             */
+            AgreeCancelResponse.prototype.status = 0;
+
+            /**
+             * AgreeCancelResponse msg.
+             * @member {string} msg
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @instance
+             */
+            AgreeCancelResponse.prototype.msg = "";
+
+            /**
+             * Creates a new AgreeCancelResponse instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelResponse=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreeCancelResponse} AgreeCancelResponse instance
+             */
+            AgreeCancelResponse.create = function create(properties) {
+                return new AgreeCancelResponse(properties);
+            };
+
+            /**
+             * Encodes the specified AgreeCancelResponse message. Does not implicitly {@link Game.Fivestone.AgreeCancelResponse.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelResponse} message AgreeCancelResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.status);
+                if (message.msg != null && Object.hasOwnProperty.call(message, "msg"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.msg);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified AgreeCancelResponse message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelResponse} message AgreeCancelResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an AgreeCancelResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.AgreeCancelResponse} AgreeCancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreeCancelResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.status = reader.int32();
+                        break;
+                    case 2:
+                        message.msg = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an AgreeCancelResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.AgreeCancelResponse} AgreeCancelResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an AgreeCancelResponse message.
+             * @function verify
+             * @memberof Game.Fivestone.AgreeCancelResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AgreeCancelResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.status != null && message.hasOwnProperty("status"))
+                    if (!$util.isInteger(message.status))
+                        return "status: integer expected";
+                if (message.msg != null && message.hasOwnProperty("msg"))
+                    if (!$util.isString(message.msg))
+                        return "msg: string expected";
+                return null;
+            };
+
+            return AgreeCancelResponse;
+        })();
+
+        Fivestone.AgreeCancelNotify = (function() {
+
+            /**
+             * Properties of an AgreeCancelNotify.
+             * @memberof Game.Fivestone
+             * @interface IAgreeCancelNotify
+             * @property {string|null} [uid] AgreeCancelNotify uid
+             * @property {number|null} [agree] AgreeCancelNotify agree
+             * @property {Array.<number>|null} [cards] AgreeCancelNotify cards
+             */
+
+            /**
+             * Constructs a new AgreeCancelNotify.
+             * @memberof Game.Fivestone
+             * @classdesc Represents an AgreeCancelNotify.
+             * @implements IAgreeCancelNotify
+             * @constructor
+             * @param {Game.Fivestone.IAgreeCancelNotify=} [properties] Properties to set
+             */
+            function AgreeCancelNotify(properties) {
+                this.cards = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * AgreeCancelNotify uid.
+             * @member {string} uid
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @instance
+             */
+            AgreeCancelNotify.prototype.uid = "";
+
+            /**
+             * AgreeCancelNotify agree.
+             * @member {number} agree
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @instance
+             */
+            AgreeCancelNotify.prototype.agree = 0;
+
+            /**
+             * AgreeCancelNotify cards.
+             * @member {Array.<number>} cards
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @instance
+             */
+            AgreeCancelNotify.prototype.cards = $util.emptyArray;
+
+            /**
+             * Creates a new AgreeCancelNotify instance using the specified properties.
+             * @function create
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelNotify=} [properties] Properties to set
+             * @returns {Game.Fivestone.AgreeCancelNotify} AgreeCancelNotify instance
+             */
+            AgreeCancelNotify.create = function create(properties) {
+                return new AgreeCancelNotify(properties);
+            };
+
+            /**
+             * Encodes the specified AgreeCancelNotify message. Does not implicitly {@link Game.Fivestone.AgreeCancelNotify.verify|verify} messages.
+             * @function encode
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelNotify} message AgreeCancelNotify message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelNotify.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.uid != null && Object.hasOwnProperty.call(message, "uid"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uid);
+                if (message.agree != null && Object.hasOwnProperty.call(message, "agree"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.agree);
+                if (message.cards != null && message.cards.length)
+                    for (var i = 0; i < message.cards.length; ++i)
+                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.cards[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified AgreeCancelNotify message, length delimited. Does not implicitly {@link Game.Fivestone.AgreeCancelNotify.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {Game.Fivestone.IAgreeCancelNotify} message AgreeCancelNotify message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AgreeCancelNotify.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an AgreeCancelNotify message from the specified reader or buffer.
+             * @function decode
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {Game.Fivestone.AgreeCancelNotify} AgreeCancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelNotify.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Game.Fivestone.AgreeCancelNotify();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.uid = reader.string();
+                        break;
+                    case 2:
+                        message.agree = reader.int32();
+                        break;
+                    case 3:
+                        if (!(message.cards && message.cards.length))
+                            message.cards = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.cards.push(reader.int32());
+                        } else
+                            message.cards.push(reader.int32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an AgreeCancelNotify message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {Game.Fivestone.AgreeCancelNotify} AgreeCancelNotify
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AgreeCancelNotify.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an AgreeCancelNotify message.
+             * @function verify
+             * @memberof Game.Fivestone.AgreeCancelNotify
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AgreeCancelNotify.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.uid != null && message.hasOwnProperty("uid"))
+                    if (!$util.isString(message.uid))
+                        return "uid: string expected";
+                if (message.agree != null && message.hasOwnProperty("agree"))
+                    if (!$util.isInteger(message.agree))
+                        return "agree: integer expected";
+                if (message.cards != null && message.hasOwnProperty("cards")) {
+                    if (!Array.isArray(message.cards))
+                        return "cards: array expected";
+                    for (var i = 0; i < message.cards.length; ++i)
+                        if (!$util.isInteger(message.cards[i]))
+                            return "cards: integer[] expected";
+                }
+                return null;
+            };
+
+            return AgreeCancelNotify;
         })();
 
         Fivestone.Chess = (function() {

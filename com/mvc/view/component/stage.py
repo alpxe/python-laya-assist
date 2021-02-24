@@ -4,6 +4,7 @@ import re
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog, QPushButton, QLabel
 
+from com.core.process.issue import Issue
 from com.mvc.model.modellocator import ModelLocator
 from com.mvc.view.component.gulib import GuLib
 from com.mvc.view.component.max_component import MaxComponent
@@ -33,6 +34,14 @@ class Stage(QMainWindow, Ui_Form):
         self.maxBtn.clicked.connect(self.__max_click_handler)  # LayaMaxUI
         self.libraryBtn.clicked.connect(self.__library_click_handler)  # 库导入
         self.pathTxt.textChanged.connect(self.__path_changed_handler)
+        self.compressBtn.clicked.connect(self.__compress_click_handler)  # 压缩发布
+        pass
+
+    def __compress_click_handler(self):
+        if Issue().run():
+            self.__dialog("压缩完成")
+        else:
+            self.__dialog("请先发布Release")
         pass
 
     def __path_click_handler(self):
@@ -78,7 +87,7 @@ class Stage(QMainWindow, Ui_Form):
                 ModelLocator.project = base_url  # 当前项目指向
         except Exception as e:
             print('error {}'.format(e))
-            
+
         return base_url
 
     def save_url(self):
@@ -95,9 +104,9 @@ class Stage(QMainWindow, Ui_Form):
             return False
 
     @staticmethod
-    def __dialog():
+    def __dialog(tips="请先选择Laya项目"):
         dialog = QDialog()
-        label = QLabel("请先选择Laya项目", dialog)
+        label = QLabel(tips, dialog)
         label.move(10, 10)
         btn = QPushButton('关闭', dialog)
         btn.clicked.connect(dialog.close)
