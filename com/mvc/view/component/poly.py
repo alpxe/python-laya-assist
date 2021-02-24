@@ -25,7 +25,6 @@ class Poly(QMainWindow, Ui_Form):
 
     @staticmethod
     def __openInputHandler():
-        print(Generate().input_file_path)
         Generate().open_file(Generate().input_file_path)
         pass
 

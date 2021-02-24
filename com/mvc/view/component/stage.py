@@ -1,9 +1,11 @@
 import os
 import re
+import sys
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog, QPushButton, QLabel
 
+from com.core.process.generate import Generate
 from com.core.process.issue import Issue
 from com.mvc.model.modellocator import ModelLocator
 from com.mvc.view.component.gulib import GuLib
@@ -47,6 +49,12 @@ class Stage(QMainWindow, Ui_Form):
         pass
 
     def __path_click_handler(self):
+        # print(os.path.dirname(sys.argv[0]))
+        # real = os.path.dirname(os.path.dirname(sys.argv[0]))
+        # real=os.path.join(real,"Resources","assets")
+        # self.__dialog(real)
+        # Generate().open_file(real)
+
         path = os.path.dirname(self.exist_url())
         directory = QFileDialog.getExistingDirectory(self, "请选择文件夹路径", path)
         self.pathTxt.setText(directory)

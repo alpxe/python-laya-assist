@@ -1,11 +1,15 @@
-##### 引用模块  cv2 pyqt pyperclip
+#### 使用说明
 
-- 多态图工具是比较独立的功能
-  - 多功能打包Laya多态图
-  
-- LayaMaxUI 路径拷贝功能 使用前请先指定laya项目
-  - 点击拷贝按钮即可将选中的路径拷贝到你的剪切板
+> 项目引用的类库
+> > PyQt5  
+> opencv-contrib-python-headless  
+> pyperclip
 
-~  
-~ 有空开发压缩发布等衍生功能  
-~  也欢迎有开发建议
+- 文件夹位置
+- 需要在这些目录下，准备好assets目录
+    - MacOS : /Users/username/Library/Containers/LayaAssist
+    - Windows : 软件根目录
+
+```cmd
+pyinstaller --windowed --clean --noconfirm --hidden-import=queue  --icon="icon/electron.icns"  name="Laya工具箱"  main.py
+```

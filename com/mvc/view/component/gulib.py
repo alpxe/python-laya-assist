@@ -44,6 +44,7 @@ class GuLib(QMainWindow, Ui_Form):
         :param point:
         :return:
         """
+        self.tipsTxt.setText("")
         index = self.listView.indexAt(point)
         item = self.model.itemData(index)
         name = item[0]
@@ -55,6 +56,7 @@ class GuLib(QMainWindow, Ui_Form):
         self.generateBtn.clicked.connect(self.__generate_click_handler)
 
     def closeEvent(self, event) -> None:
+        self.tipsTxt.setText("")
         apps.facade().sendNotification(Notice.APP_STAGE_SHOW)
 
     def __extract(self):
@@ -85,6 +87,7 @@ class GuLib(QMainWindow, Ui_Form):
         self.checkBtn.setCheckState(Qt.Checked)
 
     def __check_click_handler(self, e):
+        self.tipsTxt.setText("")
         if e:
             self.checkBtn.setCheckState(Qt.Checked)
 

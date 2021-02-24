@@ -3,6 +3,7 @@ import sys
 import com.core.apps as apps
 from PyQt5.QtWidgets import QApplication
 
+from com.core.process.generate import Generate
 from com.mvc.controller.notice import Notice
 from com.mvc.model.modellocator import ModelLocator
 
@@ -17,7 +18,7 @@ class Main:
     def __init__(self):
         # 设置根文件夹路径
         if sys.platform == "darwin":
-            ModelLocator.root = "/Users/alpxe/Library/Containers/LayaAssist"
+            ModelLocator.root = os.path.join(os.path.expanduser('~/'), "Library/Containers/LayaAssist")
         else:
             ModelLocator.root = os.path.abspath(os.path.dirname("."))
 
