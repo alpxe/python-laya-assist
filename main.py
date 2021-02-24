@@ -4,6 +4,7 @@ import com.core.apps as apps
 from PyQt5.QtWidgets import QApplication
 
 from com.mvc.controller.notice import Notice
+from com.mvc.model.modellocator import ModelLocator
 
 if hasattr(sys, 'frozen'):
     os.environ['PATH'] = sys._MEIPASS + ";" + os.environ['PATH']
@@ -14,6 +15,12 @@ class Main:
     stage = None
 
     def __init__(self):
+        # 设置根文件夹路径
+        if sys.platform == "darwin":
+            ModelLocator.root = "/Users/alpxe/Library/Containers/LayaAssist"
+        else:
+            ModelLocator.root = os.path.abspath(os.path.dirname("."))
+
         apps.facade().startup(self)
         app = QApplication(sys.argv)
         apps.facade().sendNotification(Notice.EVENT_MAIN_INSTALL)

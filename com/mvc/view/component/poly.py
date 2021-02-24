@@ -25,12 +25,13 @@ class Poly(QMainWindow, Ui_Form):
 
     @staticmethod
     def __openInputHandler():
-        Generate().open_file(Generate.input_file_path)
+        print(Generate().input_file_path)
+        Generate().open_file(Generate().input_file_path)
         pass
 
     @staticmethod
     def __openOutputHandler():
-        Generate().open_file(Generate.output_file_path)
+        Generate().open_file(Generate().output_file_path)
         pass
 
     def __generateHandler(self):

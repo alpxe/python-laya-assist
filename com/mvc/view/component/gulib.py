@@ -15,6 +15,10 @@ import com.core.apps as apps
 
 
 class GuLib(QMainWindow, Ui_Form):
+    """
+    导入类库实现页
+    """
+
     ASSETS_LIBS = 'assets/libs'
 
     model = None
@@ -22,6 +26,8 @@ class GuLib(QMainWindow, Ui_Form):
     def __init__(self):
         super(GuLib, self).__init__()
         self.setupUi(self)
+
+        self.ASSETS_LIBS = os.path.join(ModelLocator.root, self.ASSETS_LIBS)
 
     def show(self) -> None:
         super(GuLib, self).show()
@@ -41,6 +47,7 @@ class GuLib(QMainWindow, Ui_Form):
         index = self.listView.indexAt(point)
         item = self.model.itemData(index)
         name = item[0]
+
         Generate().open_file(os.path.join(self.ASSETS_LIBS, name))
 
     def __init_event(self):
@@ -88,7 +95,7 @@ class GuLib(QMainWindow, Ui_Form):
     def __generate_click_handler(self):
         self.tipsTxt.setText("正在导入...")
         self.errTxt.setText('')
-        
+
         files = []
         for i in range(self.model.rowCount()):
             item: QStandardItem = self.model.item(i, 0)

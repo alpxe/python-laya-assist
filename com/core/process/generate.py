@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
-import shutil
 import platform
 
 import numpy as np
 import cv2
 
 from com.core.base.singleton import Singleton
+from com.mvc.model.modellocator import ModelLocator
 
 
 class Generate(Singleton):
@@ -18,9 +18,13 @@ class Generate(Singleton):
     alignV = "M"
     auto_delete = False
 
-    root_path = os.path.abspath(os.path.dirname("."))
-    input_file_path = os.path.join('assets', 'input')  # "assets\\input"
-    output_file_path = os.path.join('assets', 'output')
+    # root_path = os.path.abspath(os.path.dirname("."))
+    # input_file_path = os.path.join('assets', 'input')  # "assets\\input"
+    # output_file_path = os.path.join('assets', 'output')
+
+    def __single__(self):
+        self.input_file_path = os.path.join(ModelLocator.root, 'assets', 'input')
+        self.output_file_path = os.path.join(ModelLocator.root, 'assets', 'output')
 
     def setting(self, arrange, alignH, alignV, padding, auto_delete):
         self.arrange = arrange
@@ -120,6 +124,6 @@ class Generate(Singleton):
             os.makedirs(fp)
 
         if platform.system() == "Darwin":
-            os.system('open {}'.format(os.path.join(self.root_path, fp)))
+            os.system('open {}'.format(fp))
         else:
-            os.system("start explorer {}".format(os.path.join(self.root_path, fp)))
+            os.system("start explorer {}".format(fp))

@@ -20,6 +20,8 @@ class Stage(QMainWindow, Ui_Form):
         super(Stage, self).__init__()
         self.setupUi(self)
 
+        self.cache_path = os.path.join(ModelLocator.root, self.cache_path)
+
         self.pathTxt.setText(self.exist_url())
 
         self.poly = Poly()
