@@ -12,8 +12,10 @@ from com.mvc.model.modellocator import ModelLocator
 class Issue(Singleton):
 
     def run(self):
-        base_path = os.path.join(ModelLocator.project, "release")
+        base_path = os.path.join(ModelLocator.project, "release")  # Laya项目基础路径
         web_path = os.path.join(base_path, "web")
+
+        deploy_path = os.path.join(ModelLocator.root, "assets/deploy")
 
         if not os.path.exists(web_path):
             return False
@@ -34,9 +36,9 @@ class Issue(Singleton):
         self.cp_file(web_path, res_path, "version.json")
 
         # 模版
-        self.cp_dirs("assets/deploy", res_path, "css")
-        self.cp_dirs("assets/deploy", res_path, "js")
-        self.cp_file("assets/deploy", res_path, "index.html")
+        self.cp_dirs(deploy_path, res_path, "css")
+        self.cp_dirs(deploy_path, res_path, "js")
+        self.cp_file(deploy_path, res_path, "index.html")
 
         # js -> manifest.json
         libs = []
